@@ -1,9 +1,9 @@
-{
-  "name": "birth-report-backend",
-  "private": true,
-  "type": "module",
-  "dependencies": {
-    "node-fetch": "^3.3.2"
+// api/tally-webhook.js
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ ok: false, error: "Method not allowed" });
   }
+  const payload = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
+  console.log("[TALLY] incoming:", JSON.stringify(payload, null, 2));
+  return res.status(200).json({ ok: true, received: true });
 }
-
