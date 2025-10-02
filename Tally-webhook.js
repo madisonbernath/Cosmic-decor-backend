@@ -1,8 +1,6 @@
 {
-  "functions": {
-    "api/*.js": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  "name": "cosmic-decor-backend",
+  "private": true,
+  "type": "module",
+  "dependencies": {}
 }
-
